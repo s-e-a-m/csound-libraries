@@ -10,7 +10,7 @@ genPlot[path_String] := Module[
   n = path;
   f = Import[n];
   ListPlot[{extractValues[f], {1}},
-   PlotRange -> {{0, 30}, {-1.1, 1.1}},
+   PlotRange -> {All, {-1.1, 1.1}},
    ImageSize -> Medium,
    AspectRatio -> 1/3,
    Filling -> Axis,
