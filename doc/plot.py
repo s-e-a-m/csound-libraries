@@ -9,7 +9,7 @@ def estrai_dati(file_path):
     end_index = None
     for i, line in enumerate(lines):
         if "---------END OF HEADER--------------\n" in line:
-            start_index = i + 1  # L'inizio dei dati è subito dopo
+            start_index = i + 1
         if "---------END OF TABLE---------------\n" in line:
             end_index = i
             break
