@@ -76,8 +76,9 @@ opcode PAR_FDL_SCH, a, ai[]i[]iii
 	aPulse, iTfdl[], iGfdl[], iSR, iN, icnt  xin
 		icnt  =  icnt + 1
 		aFDL = FDL_SCH(aPulse, iTfdl[icnt - 1], iGfdl[icnt - 1], iSR)
-		aMix init 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           if icnt < iN then
-        	aMix PAR_FDL_SCH aPulse, iTfdl, iGfdl, iSR, iN, icnt
+		aMix init 0  
+		if icnt < iN then
+        		aMix PAR_FDL_SCH aPulse, iTfdl, iGfdl, iSR, iN, icnt
 		endif
 	xout aMix + aFDL
 endop
@@ -98,7 +99,8 @@ opcode PAR_APF_SCH, a, ai[]i[]iii
     aPulse, iTapf[], iGapf[], iSR, iN, icnt  xin
 		icnt  =  icnt + 1
         aAPF = APF_SCH(aPulse , iTapf[icnt - 1], iGapf[icnt - 1], iSR)
-        aMix init 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           if icnt < iN then
+        aMix init 0   
+	if icnt < iN then
         	aMix PAR_APF_SCH aPulse, iTapf, iGapf, iSR, iN, icnt
         endif
     xout aAPF + aMix
